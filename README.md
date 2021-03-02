@@ -1,2 +1,1 @@
-# cGAN-based_KD
-A novel cGAN-based knowledge distillation method
+# A General cGAN-based Knowledge Distillation Framework for Image Classification and Regression with Limited Data
