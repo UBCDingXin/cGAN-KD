@@ -1,1 +1,9 @@
-# A General cGAN-based Knowledge Distillation Framework for Image Classification and Regression with Limited Data
+# cGAN-KD: Distill and Transfer Knowledge via cGAN-generated Samples
+
+
+If you use this code, please cite
+```text
+
+TO BE DONE...
+
+```
