@@ -18,15 +18,15 @@ TO BE DONE...
 -------------------------------
 
 ## Requirements
-argparse>=1.1
-h5py>=2.10.0
-matplotlib>=3.2.1
-numpy>=1.18.5
-Pillow>=7.0.0
-python=3.8.5
-torch>=1.5.0
-torchvision>=0.6.0
-tqdm>=4.46.1
+argparse>=1.1 <br />
+h5py>=2.10.0 <br />
+matplotlib>=3.2.1 <br />
+numpy>=1.18.5 <br />
+Pillow>=7.0.0 <br />
+python=3.8.5 <br />
+torch>=1.5.0 <br />
+torchvision>=0.6.0 <br />
+tqdm>=4.46.1 <br />
 
 
 
