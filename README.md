@@ -15,6 +15,12 @@ TO BE DONE...
 </p>
 
 
+<p align="center">
+  <img src="images/evolution_of_fake_distribution.png">
+  Evolution of fake samples' distributions and datasets.
+</p>
+
+
 -------------------------------
 
 ## Requirements
