@@ -33,15 +33,30 @@ tqdm>=4.46.1 <br />
 -------------------------------
 
 ## Datasets (h5 files) and necessary checkpoints
+Download and unzip `cGAN-KD_data_and_ckpts.7z`:  <br />
+https://1drv.ms/u/s!Arj2pETbYnWQsdtpYbSbbb7ntilamQ?e=AKaVHF <br />
 
+Put `./C-X0K/CIFAR10_trainset_X0000_seed_2020.h5` at `./CIFAR_X0K/cGAN-based_KD/data/`. <br />
+Put `./C-X0K/C10_2020.hdf5` at `./CIFAR_X0K/BigGAN/data/`. <br />
+Put `./C-X0K/UDA_pretrained_teachers/*.pth` at `./CIFAR_X0K/Distiller/pretrained/`. <br />
+Put `./C-X0K/ckpt_BigGAN_cifar10_ntrain_X0000_seed_2020` at `./CIFAR_X0K/cGAN-based_KD/Output_CIFAR10/saved_models/`. <br />
+X stands for 5, 2, 1, representing C-50K, C-20K, and C-10K respectively. <br />
 
-
-
+Put `./RC-49/dataset` at `./RC-49`. <br />
+Put `./RC-49/output` at `./RC-49/CcGAN-based_KD`. <br />
 
 -------------------------------
 ## Sample Usage
+### CIFAR-10
+We only take C-50K as an example to show how to conduct the experiment on CIFAR-10.
+
+#### BigGAN training
 
 
+####
+
+
+### RC-49
 
 
 
