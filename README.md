@@ -37,7 +37,6 @@ Download and unzip `cGAN-KD_data_and_ckpts.7z`:  <br />
 https://1drv.ms/u/s!Arj2pETbYnWQsswJMICWpCw20wsP1g?e=8tLRwB <br />
 
 Then, transfer files or folders in `cGAN-KD_data_and_ckpts` to this github repo as follows.  <br />
-
 Put `./C-X0K/CIFAR10_trainset_X0000_seed_2020.h5` at `./CIFAR_X0K/cGAN-based_KD/data/`. <br />
 Put `./C-X0K/C10_2020.hdf5` at `./CIFAR_X0K/BigGAN/data/`. <br />
 Put `./C-X0K/UDA_pretrained_teachers/*.pth` at `./CIFAR_X0K/Distiller/pretrained/`. <br />
