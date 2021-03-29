@@ -47,3 +47,18 @@ tqdm>=4.46.1 <br />
 
 -------------------------------
 ## Some Results
+* **CIFAR-10**
+<p align="center">
+  <img src="images/cifar10_main_results.png">
+  <img src="images/cifar10_main_SSKD.png">
+  <img src="images/cifar10_main_UDA.png">
+  <img src="images/cifar_ablation_effect_of_components_VGG11.png">
+  <img src="images/cifar_ablation_error_vs_nfake.png">
+</p>
+
+* **RC-49**
+<p align="center">
+  <img src="images/rc49_main_results.png">
+  <img src="images/rc49_ablation_effect_of_components_ShuffleNet.png">
+  <img src="images/rc49_ablation_error_vs_nfake.png">
+</p>
