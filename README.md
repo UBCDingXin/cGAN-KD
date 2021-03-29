@@ -50,19 +50,19 @@ Put `./RC-49/output` at `./RC-49/CcGAN-based_KD`. <br />
 -------------------------------
 ## Sample Usage
 ### CIFAR-10
-The codes for C-50K, C-20K, and C-10K are in `./CIFAR/CIFAR_50K`, `./CIFAR/CIFAR_20K`, and `./CIFAR/CIFAR_10K` respectively.
+The codes for C-50K, C-20K, and C-10K are in `./CIFAR/CIFAR_50K`, `./CIFAR/CIFAR_20K`, and `./CIFAR/CIFAR_10K` respectively. We only take C-50K as an example to show how to run the experiment.
 
 #### BigGAN training
 The implementation of BigGAN is mainly based on [3].  <br />
 Run `./CIFAR/CIFAR_50K/BigGAN/scripts/launch_cifar10_ema.sh` for C-50K (50,000 samples).  <br />
-Run `./CIFAR/CIFAR_20K/BigGAN/scripts/launch_cifar10_ema.sh` for C-20K (20,000 samples).  <br />
-Run `./CIFAR/CIFAR_10K/BigGAN/scripts/launch_cifar10_ema.sh` for C-10K (10,000 samples).  <br />
+<!-- Run `./CIFAR/CIFAR_20K/BigGAN/scripts/launch_cifar10_ema.sh` for C-20K (20,000 samples).  <br />
+Run `./CIFAR/CIFAR_10K/BigGAN/scripts/launch_cifar10_ema.sh` for C-10K (10,000 samples).  <br /> -->
 Checkpoints of BigGAN used in our experiments are in `cGAN-KD_data_and_ckpts.7z`.  <br />
 
 #### Fake data generation
 Run `./CIFAR/CIFAR_50K/cGAN-based_KD/scripts/run_gen_synt_data.sh` for C-50K (50,000 samples).  <br />
-Run `./CIFAR/CIFAR_20K/cGAN-based_KD/scripts/run_gen_synt_data.sh` for C-20K (20,000 samples).  <br />
-Run `./CIFAR/CIFAR_10K/cGAN-based_KD/scripts/run_gen_synt_data.sh` for C-10K (10,000 samples).  <br />
+<!-- Run `./CIFAR/CIFAR_20K/cGAN-based_KD/scripts/run_gen_synt_data.sh` for C-20K (20,000 samples).  <br />
+Run `./CIFAR/CIFAR_10K/cGAN-based_KD/scripts/run_gen_synt_data.sh` for C-10K (10,000 samples).  <br /> -->
 `filtering_threshold` in `run_gen_synt_data.sh` controls the filtering threshold.  <br />
 `NFAKE_PER_CLASS` in `run_gen_synt_data.sh` controls the number of fake images generated for each class. <br />
 
