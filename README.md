@@ -66,24 +66,51 @@ Run `./CIFAR/CIFAR_10K/cGAN-based_KD/scripts/run_gen_synt_data.sh` for C-10K (10
 `filtering_threshold` in `run_gen_synt_data.sh` controls the filtering threshold.  <br />
 `NFAKE_PER_CLASS` in `run_gen_synt_data.sh` controls the number of fake images generated for each class. <br />
 
-#### NOKD, BLKD, TOKD, cGAN-KD, cGAN-KD+BLKD, cGAN-KD+TAKD
+Generated fake data are stored in `./CIFAR/CIFAR_50K/cGAN-based_KD/data` in the h5 format. <br />
+
+#### Grid search for selecting the optimal rho
+Run `./CIFAR/CIFAR_50K/cGAN-based_KD/scripts/run_rho_selection.sh` <br />
+`FAKE_DATASET_NAME` specifies the fake dataset's name, which in the 'GANNAME_..._nfake_xxx'. <br />
+
+
+#### NOKD, BLKD, TAKD, cGAN-KD, cGAN-KD+BLKD, cGAN-KD+TAKD
+NOKD: run `./CIFAR/CIFAR_50K/cGAN-based_KD/scripts/run_nokd.sh` <br />
+BLKD: run `./CIFAR/CIFAR_50K/cGAN-based_KD/scripts/run_blkd.sh` <br />
+TAKD: run `./CIFAR/CIFAR_50K/cGAN-based_KD/scripts/run_takd.sh` <br />
+cGAN-KD: run `./CIFAR/CIFAR_50K/cGAN-based_KD/scripts/run_nokd_fake.sh` <br />
+cGAN-KD+BLKD: run `./CIFAR/CIFAR_50K/cGAN-based_KD/scripts/run_blkd_fake.sh` <br />
+cGAN-KD+TAKD: run `./CIFAR/CIFAR_50K/cGAN-based_KD/scripts/run_takd_fake.sh` <br />
 
 
 #### SSKD and cGAN-KD+SSKD
+SSKD: run `./CIFAR/CIFAR_50K/SSKD/scripts/run_SSKD.sh` <br />
+cGAN-KD+SSKD: run `./CIFAR/CIFAR_50K/SSKD/scripts/run_SSKD+fake.sh` <br />
 
 
 #### BLKD+UDA and cGAN-KD+BLKD+UDA
-
+BLKD+UDA: run `./CIFAR/CIFAR_50K/Distiller/scripts/run_blkd+uda.sh` <br />
+cGAN-KD+BLKD+UDA: run `./CIFAR/CIFAR_50K/Distiller/scripts/run_blkd+uda+fake.sh` <br />
 
 ### RC-49
+We only take R-25 as an example to show how to run the experiment.
 
-#### BigGAN training
+#### CcGAN training and fake data generation
+The implementation of CcGAN is mainly based on [1] and [2].  <br />
 
+Run `./RC49/CcGAN-based_KD/scripts/run_gen_r25.sh` for R-25 (25 images per angle).  <br />
+<!-- Run `./RC49/CcGAN-based_KD/scripts/run_gen_r15.sh` for R-15 (15 images per angle).  <br />
+Run `./RC49/CcGAN-based_KD/scripts/run_gen_r5.sh` for R-5 (5 images per angle).  <br /> -->
+`filtering_threshold` controls the filtering threshold.  <br />
 
-#### Fake data generation
-
+#### Grid search for selecting the optimal rho
+Run `./RC49/CcGAN-based_KD/scripts/run_rho_selection_r25.sh` <br />
+<!-- Run `./RC49/CcGAN-based_KD/scripts/run_rho_selection_r15.sh` <br />
+Run `./RC49/CcGAN-based_KD/scripts/run_rho_selection_r5.sh` <br /> -->
+`FAKE_DATASET_NAME` specifies the fake dataset's name, which in the 'GANNAME_..._nfake_xxx'. <br />
 
 #### NOKD and cGAN-KD
+NOKD: run `./RC49/CcGAN-based_KD/scripts/run_nokd_r25.sh` <br />
+cGAN-KD: run `./RC49/CcGAN-based_KD/scripts/run_nokd+fake_r25.sh` <br />
 
 
 -------------------------------
