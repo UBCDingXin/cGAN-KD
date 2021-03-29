@@ -36,6 +36,8 @@ tqdm>=4.46.1 <br />
 Download and unzip `cGAN-KD_data_and_ckpts.7z`:  <br />
 https://1drv.ms/u/s!Arj2pETbYnWQsdtpYbSbbb7ntilamQ?e=AKaVHF <br />
 
+Then, transfer files or folders in `cGAN-KD_data_and_ckpts` to this github repo as follows.  <br />
+
 Put `./C-X0K/CIFAR10_trainset_X0000_seed_2020.h5` at `./CIFAR_X0K/cGAN-based_KD/data/`. <br />
 Put `./C-X0K/C10_2020.hdf5` at `./CIFAR_X0K/BigGAN/data/`. <br />
 Put `./C-X0K/UDA_pretrained_teachers/*.pth` at `./CIFAR_X0K/Distiller/pretrained/`. <br />
@@ -48,16 +50,32 @@ Put `./RC-49/output` at `./RC-49/CcGAN-based_KD`. <br />
 -------------------------------
 ## Sample Usage
 ### CIFAR-10
-We only take C-50K as an example to show how to conduct the experiment on CIFAR-10.
+The codes for C-50K, C-20K, and C-10K are in `./CIFAR/CIFAR_50K`, `./CIFAR/CIFAR_20K`, and `./CIFAR/CIFAR_10K` respectively. We only take C-50K as an example to show how to run the experiment.
 
 #### BigGAN training
 
 
-####
+#### Fake data generation
+
+
+#### NOKD, BLKD, TOKD, cGAN-KD, cGAN-KD+BLKD, cGAN-KD+TAKD
+
+
+#### SSKD and cGAN-KD+SSKD
+
+
+#### BLKD+UDA and cGAN-KD+BLKD+UDA
 
 
 ### RC-49
 
+#### BigGAN training
+
+
+#### Fake data generation
+
+
+#### NOKD and cGAN-KD
 
 
 -------------------------------
