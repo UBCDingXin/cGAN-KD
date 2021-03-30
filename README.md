@@ -33,7 +33,7 @@ tqdm>=4.46.1
 
 ## Datasets (h5 files) and necessary checkpoints
 Download and unzip `cGAN-KD_data_and_ckpts.7z`:  <br />
-https://1drv.ms/u/s!Arj2pETbYnWQsswJMICWpCw20wsP1g?e=8tLRwB <br />
+https://1drv.ms/u/s!Arj2pETbYnWQsswK03PbX-w5YQg2AQ?e=eI59gT <br />
 
 Then, transfer files or folders in `cGAN-KD_data_and_ckpts` to this github repo as follows.  <br />
 
