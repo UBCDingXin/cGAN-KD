@@ -1,6 +1,6 @@
 # cGAN-KD: Distill and Transfer Knowledge via cGAN-generated Samples
 
-This repository provides the source codes for the experiments in our paper on the CIFAR-10 and RC-49 datasets. <br />
+This repository provides the source codes for the experiments in our paper. <br />
 If you use this code, please cite
 ```text
 
