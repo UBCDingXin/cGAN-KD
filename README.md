@@ -1,4 +1,4 @@
-# cGAN-KD: Distill and Transfer Knowledge via cGAN-generated Samples
+# Distill and Transfer Knowledge via cGAN-generated Samples: A Unified Knowledge Distillation Framework
 
 This repository provides the source codes for the experiments in our paper. <br />
 If you use this code, please cite
