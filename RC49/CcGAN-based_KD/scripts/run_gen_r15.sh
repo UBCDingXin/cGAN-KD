@@ -41,7 +41,6 @@ CUDA_VISIBLE_DEVICES=0,1 python3 generate_synthetic_data.py \
 --samp_num_fake_labels $NUM_FAKE_LABELS --samp_nfake_per_label $NFAKE_PER_LABEL \
 2>&1 | tee output_SNGAN_NImgPerLabel_${NTRAIN_PER_LABEL}_subsampling_False_filter_False_seed_${SEED}.txt
 
-
 echo "-------------------------------------------------------------------------------------------------"
 echo "RC49-${NTRAIN_PER_LABEL}; SNGAN: Subsampling, No filtering"
 CUDA_VISIBLE_DEVICES=0,1 python3 generate_synthetic_data.py \
@@ -67,29 +66,8 @@ CUDA_VISIBLE_DEVICES=0,1 python3 generate_synthetic_data.py \
 --samp_num_fake_labels $NUM_FAKE_LABELS --samp_nfake_per_label $NFAKE_PER_LABEL \
 2>&1 | tee output_SNGAN_NImgPerLabel_${NTRAIN_PER_LABEL}_subsampling_True_filter_False_seed_${SEED}.txt
 
-
 echo "-------------------------------------------------------------------------------------------------"
-echo "RC49-${NTRAIN_PER_LABEL}; SNGAN: No Subsampling, filtering ${filtering_threshold}"
-CUDA_VISIBLE_DEVICES=0,1 python3 generate_synthetic_data.py \
---root_path $ROOT_PATH --data_path $REAL_DATA_PATH --seed $SEED --num_workers $NCPU \
---max_num_img_per_label $NTRAIN_PER_LABEL \
---gan_dim_embed 128 --gan_embed_x2y_net_name ResNet34 \
---gan_embed_x2y_epoch 200 --gan_embed_x2y_resume_epoch 0 --gan_embed_x2y_batch_size 256 --gan_embed_x2y_lr_base 0.01 \
---gan_embed_y2h_epoch 500 --gan_embed_y2h_batch_size 256 \
---gan_loss_type hinge --gan_niters $NITERS --gan_resume_niters 0 --gan_save_niters_freq 5000 \
---gan_lr_g $LR_G --gan_lr_d $LR_D --gan_dim_g 256 \
---gan_gene_ch 64 --gan_disc_ch 64 \
---gan_batch_size_disc $BATCH_SIZE_D --gan_batch_size_gene $BATCH_SIZE_G \
---gan_kernel_sigma $SIGMA --gan_threshold_type $CcGAN_type --gan_kappa $KAPPA \
---samp_batch_size 1000 \
---samp_num_fake_labels $NUM_FAKE_LABELS --samp_nfake_per_label $NFAKE_PER_LABEL \
---samp_filter_precnn_net VGG16 --samp_filter_precnn_net_ckpt_filename ckpt_baseline_VGG16_epoch_350_seed_2020_data_real_nreal_6750_fake_None_validation_False.pth \
---samp_filter_mae_percentile_threshold $filtering_threshold --unfiltered_fake_dataset_filename fake_RC49_NTrainPerLabel_15_SNGAN_hinge_niters_30000_subsampling_None_FilterMAEPct_1.0_nfake_179800_seed_2020.h5 \
-2>&1 | tee output_SNGAN_NImgPerLabel_${NTRAIN_PER_LABEL}_subsampling_False_filter_${filtering_threshold}_seed_${SEED}.txt
-
-
-echo "-------------------------------------------------------------------------------------------------"
-echo "RC49-${NTRAIN_PER_LABEL}; SNGAN: Subsampling, filtering ${filtering_threshold}"
+echo "RC49-${NTRAIN_PER_LABEL}; SNGAN: Subsampling, filtering ${filtering_threshold}, adjustment"
 CUDA_VISIBLE_DEVICES=0,1 python3 generate_synthetic_data.py \
 --root_path $ROOT_PATH --data_path $REAL_DATA_PATH --seed $SEED --num_workers $NCPU \
 --max_num_img_per_label $NTRAIN_PER_LABEL \
@@ -113,4 +91,5 @@ CUDA_VISIBLE_DEVICES=0,1 python3 generate_synthetic_data.py \
 --samp_num_fake_labels $NUM_FAKE_LABELS --samp_nfake_per_label $NFAKE_PER_LABEL \
 --samp_filter_precnn_net VGG16 --samp_filter_precnn_net_ckpt_filename ckpt_baseline_VGG16_epoch_350_seed_2020_data_real_nreal_6750_fake_None_validation_False.pth \
 --samp_filter_mae_percentile_threshold $filtering_threshold --unfiltered_fake_dataset_filename fake_RC49_NTrainPerLabel_15_SNGAN_hinge_niters_30000_subsampling_cDRE-F-SP+RS_hard_1e-20_FilterMAEPct_1.0_nfake_179800_seed_2020.h5 \
+--adjust_label \
 2>&1 | tee output_SNGAN_NImgPerLabel_${NTRAIN_PER_LABEL}_subsampling_True_filter_${filtering_threshold}_seed_${SEED}.txt

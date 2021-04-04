@@ -68,26 +68,6 @@ CUDA_VISIBLE_DEVICES=0,1 python3 generate_synthetic_data.py \
 2>&1 | tee output_${GAN_NAME}_subsampling_True_filter_False_seed_${SEED}.txt
 
 echo "-------------------------------------------------------------------------------------------------"
-echo "UTKFace; ${GAN_NAME}: No Subsampling, filtering ${filtering_threshold}"
-CUDA_VISIBLE_DEVICES=0,1 python3 generate_synthetic_data.py \
---root_path $ROOT_PATH --data_path $REAL_DATA_PATH --seed $SEED --num_workers $NCPU \
---gan_name $GAN_NAME \
---gan_dim_embed 128 --gan_embed_x2y_net_name ResNet34 \
---gan_embed_x2y_epoch 200 --gan_embed_x2y_resume_epoch 0 --gan_embed_x2y_batch_size 256 --gan_embed_x2y_lr_base 0.01 \
---gan_embed_y2h_epoch 500 --gan_embed_y2h_batch_size 256 \
---gan_loss_type hinge --gan_niters $NITERS --gan_resume_niters 0 --gan_save_niters_freq 5000 --gan_d_niters $D_NITERS \
---gan_lr_g $LR_G --gan_lr_d $LR_D --gan_dim_g 256 \
---gan_gene_ch 64 --gan_disc_ch 64 \
---gan_batch_size_disc $BATCH_SIZE_D --gan_batch_size_gene $BATCH_SIZE_G \
---gan_kernel_sigma $SIGMA --gan_threshold_type $CcGAN_type --gan_kappa $KAPPA \
---gan_DiffAugment --gan_DiffAugment_policy 'color,translation,cutout' \
---samp_batch_size 1000 \
---samp_num_fake_labels $NUM_FAKE_LABELS --samp_nfake_per_label $NFAKE_PER_LABEL \
---samp_filter_precnn_net VGG16 --samp_filter_precnn_net_ckpt_filename ckpt_baseline_VGG16_epoch_350_seed_2020_data_real_nreal_15149_fake_None_validation_False.pth \
---samp_filter_mae_percentile_threshold $filtering_threshold --unfiltered_fake_dataset_filename fake_UTKFace_SAGAN_hinge_niters_40000_subsampling_None_FilterMAEPct_1.0_nfake_300000_seed_2020.h5 \
-2>&1 | tee output_${GAN_NAME}_subsampling_False_filter_${filtering_threshold}_seed_${SEED}.txt
-
-echo "-------------------------------------------------------------------------------------------------"
 echo "UTKFace; ${GAN_NAME}: Subsampling, filtering ${filtering_threshold}"
 CUDA_VISIBLE_DEVICES=0,1 python3 generate_synthetic_data.py \
 --root_path $ROOT_PATH --data_path $REAL_DATA_PATH --seed $SEED --num_workers $NCPU \

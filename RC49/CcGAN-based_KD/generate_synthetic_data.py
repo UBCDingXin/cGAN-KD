@@ -49,6 +49,7 @@ torch.backends.cudnn.deterministic = True
 cudnn.benchmark = False
 np.random.seed(args.seed)
 
+
 #-------------------------------
 # output folders
 eval_models_folder = os.path.join(args.root_path, 'output/eval_models')
@@ -639,7 +640,7 @@ if not args.eval: #if not evaluate, then sampling
             target_labels_norm = np.sort(np.array(list(set(labels_test_raw))))
             target_labels_norm = target_labels_norm/args.max_label
             assert target_labels_norm.min()>=0 and target_labels_norm.max()<=1
-        
+
         if args.subsampling:
             print("\n Generating {} fake images for each of {} distinct labels with subsampling: {}.".format(args.samp_nfake_per_label, len(target_labels_norm), subsampling_method))
             fake_images = []
@@ -680,7 +681,7 @@ if not args.eval: #if not evaluate, then sampling
         assert len(fake_images) == args.samp_nfake_per_label*len(target_labels_norm)
         assert len(fake_labels) == args.samp_nfake_per_label*len(target_labels_norm)
         assert np.max(fake_images)>1
-        
+
         ##end if
         # ### denormlize: [-1,1]--->[0,255]
         # fake_images = (fake_images*0.5+0.5)*255.0
@@ -692,7 +693,7 @@ if not args.eval: #if not evaluate, then sampling
 
     #--------------------------------------------------------------------------------------
     ''' Filtered and Adjusted by a pre-trained CNN '''
-    if args.samp_filter_mae_percentile_threshold < 1:
+    if args.samp_filter_mae_percentile_threshold < 1 or args.adjust_label:
         print("\n -----------------------------------------------------------------------------------------")
         print("\n Start Filtering Synthetic Data >>>")
 
@@ -732,9 +733,18 @@ if not args.eval: #if not evaluate, then sampling
         fake_labels_pred = np.concatenate(fake_labels_pred, axis=0)
 
         mae_cutoff_point = np.quantile(fake_mae_loss, q=args.samp_filter_mae_percentile_threshold)
-        indx_sel = np.where(fake_mae_loss<mae_cutoff_point)[0]
+        # indx_sel = np.where(fake_mae_loss<mae_cutoff_point)[0]
+        # fake_images = fake_images[indx_sel]
+        # fake_labels = fake_labels_pred[indx_sel] #adjust the labels of fake data by using the pre-trained big CNN
+        if args.samp_filter_mae_percentile_threshold < 1:
+            indx_sel = np.where(fake_mae_loss<mae_cutoff_point)[0]
+        else:
+            indx_sel = np.arange(len(fake_images))
         fake_images = fake_images[indx_sel]
-        fake_labels = fake_labels_pred[indx_sel] #adjust the labels of fake data by using the pre-trained big CNN
+        if args.adjust_label:
+            fake_labels = fake_labels_pred[indx_sel] #adjust the labels of fake data by using the pre-trained big CNN
+        else:
+            fake_labels = fake_labels[indx_sel]
 
         ## histogram of MAEs
         fig = plt.figure()
@@ -746,21 +756,21 @@ if not args.eval: #if not evaluate, then sampling
         plt.title('Histogram of MAE')
         plt.grid(True)
         #plt.show()
-        plt.savefig(os.path.join(fake_data_folder, 'histogram_of_fake_data_MAE_with_subsampling_{}_MAEFilter_{}.png'.format(subsampling_method, args.samp_filter_mae_percentile_threshold)))
+        plt.savefig(os.path.join(fake_data_folder, 'histogram_of_fake_data_MAE_with_threshold_{}.png'.format(args.samp_filter_mae_percentile_threshold)))
 
 
     #--------------------------------------------------------------------------------------
     ''' Dump synthetic data to h5 file '''
-    
+
     nfake = len(fake_images)
-    
-    fake_dataset_name = '{}_{}_niters_{}_subsampling_{}_FilterMAEPct_{}_nfake_{}_seed_{}'.format(args.gan_name, args.gan_loss_type, args.gan_niters, subsampling_method, args.samp_filter_mae_percentile_threshold, nfake, args.seed)
-    
+
+    fake_dataset_name = '{}_{}_niters_{}_subsampling_{}_FilterMAEPct_{}_AdjustLabel_{}_nfake_{}_seed_{}'.format(args.gan_name, args.gan_loss_type, args.gan_niters, subsampling_method, args.samp_filter_mae_percentile_threshold, args.adjust_label, nfake, args.seed)
+
     fake_h5file_fullpath = os.path.join(fake_data_folder, 'fake_RC49_NTrainPerLabel_{}_{}.h5'.format(args.max_num_img_per_label, fake_dataset_name))
-    
+
     if os.path.isfile(fake_h5file_fullpath):
         os.remove(fake_h5file_fullpath)
-    
+
     ## dump fake iamges into h5 file
     with h5py.File(fake_h5file_fullpath, "w") as f:
         f.create_dataset('fake_images', data = fake_images, dtype='uint8')
