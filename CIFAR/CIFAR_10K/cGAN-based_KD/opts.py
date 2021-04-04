@@ -126,6 +126,7 @@ def gen_synth_data_opts():
     parser.add_argument('--samp_filter_ce_percentile_threshold', type=float, default=1.0,
                         help='The percentile threshold of cross entropy to filter out bad synthetic images by a pre-trained net')
     parser.add_argument('--unfiltered_fake_dataset_filename', type=str, default='')
+    parser.add_argument('--adjust_label', action='store_true', default=False)
 
     args = parser.parse_args()
 

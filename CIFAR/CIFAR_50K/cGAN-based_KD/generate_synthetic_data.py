@@ -104,6 +104,10 @@ for i in range(3):
     train_means.append(np.mean(images_i))
     train_stds.append(np.std(images_i))
 ## for i
+# train_means = [0.5,0.5,0.5]
+# train_stds = [0.5,0.5,0.5]
+# train_means=[0.507, 0.487, 0.441]
+# train_stds=[0.267, 0.256, 0.276]
 
 images_test = cifar_testset.data
 images_test = np.transpose(images_test, (0, 3, 1, 2))
@@ -627,7 +631,7 @@ else:
 
 #--------------------------------------------------------------------------------------
 ''' Filtered and Adjusted by a pre-trained CNN '''
-if args.samp_filter_ce_percentile_threshold < 1:
+if args.samp_filter_ce_percentile_threshold < 1 or args.adjust_label:
     print("\n -----------------------------------------------------------------------------------------")
     print("\n Start Filtering Synthetic Data >>>")
 
@@ -680,10 +684,19 @@ if args.samp_filter_ce_percentile_threshold < 1:
     fake_labels_pred = np.concatenate(fake_labels_pred)
 
     CE_cutoff_point = np.quantile(fake_CE_loss, q=args.samp_filter_ce_percentile_threshold)
-    indx_sel = np.where(fake_CE_loss<CE_cutoff_point)[0]
+    # indx_sel = np.where(fake_CE_loss<CE_cutoff_point)[0]
+    # fake_images = fake_images[indx_sel]
+    # # fake_labels = fake_labels[indx_sel]
+    # fake_labels = fake_labels_pred[indx_sel] #adjust the labels of fake data by using the pre-trained big CNN
+    if args.samp_filter_ce_percentile_threshold < 1:
+        indx_sel = np.where(fake_CE_loss<CE_cutoff_point)[0]
+    else:
+        indx_sel = np.arange(len(fake_images))
     fake_images = fake_images[indx_sel]
-    # fake_labels = fake_labels[indx_sel]
-    fake_labels = fake_labels_pred[indx_sel] #adjust the labels of fake data by using the pre-trained big CNN
+    if args.adjust_label:
+        fake_labels = fake_labels_pred[indx_sel] #adjust the labels of fake data by using the pre-trained big CNN
+    else:
+        fake_labels = fake_labels[indx_sel]
 
 
 ## if args.samp_filter_ce_percentile_threshold
@@ -694,7 +707,7 @@ if args.samp_filter_ce_percentile_threshold < 1:
 ''' Dump synthetic data '''
 nfake = len(fake_images)
 
-fake_dataset_name = '{}_{}_epochs_{}_transform_{}_subsampling_{}_FilterCEPct_{}_nfake_{}_seed_{}'.format(args.gan_name, args.gan_loss, args.gan_epochs, args.gan_transform, args.subsampling, args.samp_filter_ce_percentile_threshold, nfake, args.seed)
+fake_dataset_name = '{}_{}_epochs_{}_transform_{}_subsampling_{}_FilterCEPct_{}_AdjustLabel_{}_nfake_{}_seed_{}'.format(args.gan_name, args.gan_loss, args.gan_epochs, args.gan_transform, args.subsampling, args.samp_filter_ce_percentile_threshold, args.adjust_label, nfake, args.seed)
 
 fake_h5file_fullpath = args.root_path + '/data/CIFAR{}_ntrain_{}_{}.h5'.format(args.num_classes, args.ntrain, fake_dataset_name)
 

@@ -31,18 +31,7 @@ CUDA_VISIBLE_DEVICES=0 python3 generate_synthetic_data.py \
 2>&1 | tee output_BigGAN_subsampling_True_filter_False_seed_${SEED}.txt
 
 echo "-------------------------------------------------------------------------------------------------"
-echo "BigGAN: No Subsampling, filtering ${filtering_threshold}"
-CUDA_VISIBLE_DEVICES=0 python3 generate_synthetic_data.py \
---root_path $ROOT_PATH --seed $SEED \
---ntrain $NTRAIN --num_classes $NUM_CLASSES \
---gan_name BigGAN --gan_epochs 2000 --gan_resume_epoch 0 --gan_transform \
---samp_nfake_per_class $NFAKE_PER_CLASS \
---unfiltered_fake_dataset_filename "CIFAR10_ntrain_${NTRAIN}_BigGAN_vanilla_epochs_2000_transform_True_subsampling_False_FilterCEPct_1.0_nfake_500000_seed_${SEED}.h5" \
---samp_filter_precnn_net DenseNet121 --samp_filter_precnn_net_ckpt_filename "ckpt_baseline_DenseNet121_epoch_350_transform_True_seed_${SEED}_data_real_nreal_${NTRAIN}_fake_None.pth" --samp_filter_ce_percentile_threshold $filtering_threshold \
-2>&1 | tee output_BigGAN_subsampling_False_filter_${filtering_threshold}_seed_${SEED}.txt
-
-echo "-------------------------------------------------------------------------------------------------"
-echo "BigGAN: Subsampling, filtering ${filtering_threshold}"
+echo "BigGAN: Subsampling, filtering ${filtering_threshold}, adjustment"
 CUDA_VISIBLE_DEVICES=0 python3 generate_synthetic_data.py \
 --root_path $ROOT_PATH --seed $SEED \
 --ntrain $NTRAIN --num_classes $NUM_CLASSES \
@@ -52,4 +41,5 @@ CUDA_VISIBLE_DEVICES=0 python3 generate_synthetic_data.py \
 --subsampling --samp_nfake_per_class $NFAKE_PER_CLASS \
 --unfiltered_fake_dataset_filename "CIFAR10_ntrain_${NTRAIN}_BigGAN_vanilla_epochs_2000_transform_True_subsampling_True_FilterCEPct_1.0_nfake_500000_seed_${SEED}.h5" \
 --samp_filter_precnn_net DenseNet121 --samp_filter_precnn_net_ckpt_filename "ckpt_baseline_DenseNet121_epoch_350_transform_True_seed_${SEED}_data_real_nreal_${NTRAIN}_fake_None.pth" --samp_filter_ce_percentile_threshold $filtering_threshold \
+--adjust_label \
 2>&1 | tee output_BigGAN_subsampling_True_filter_${filtering_threshold}_seed_${SEED}.txt
