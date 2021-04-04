@@ -14,7 +14,7 @@ NFAKE=50000
 
 
 ###=====================================================================================================================
-FAKE_DATASET_NAME="SNGAN_hinge_niters_30000_subsampling_cDRE-F-SP+RS_hard_1e-20_FilterMAEPct_0.8_nfake_143840"
+FAKE_DATASET_NAME="SNGAN_hinge_niters_30000_subsampling_cDRE-F-SP+RS_hard_1e-20_FilterMAEPct_0.8_AdjustLabel_True_nfake_143840"
 
 CNN_NAME="ShuffleNet"
 echo "-------------------------------------------------------------------------------------------------"

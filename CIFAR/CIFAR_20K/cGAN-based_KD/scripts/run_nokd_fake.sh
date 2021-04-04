@@ -1,5 +1,5 @@
 ROOT_PATH="./CIFAR/CIFAR_20K/cGAN-based_KD"
-FAKE_DATASET_NAME="BigGAN_vanilla_epochs_2000_transform_True_subsampling_True_FilterCEPct_0.6_nfake_299969"
+FAKE_DATASET_NAME="BigGAN_vanilla_epochs_2000_transform_True_subsampling_True_FilterCEPct_0.6_AdjustLabel_True_nfake_299969"
 SUBSAMPLE_FAKE=True
 FILTER_FAKE=0.9
 SEED=2020

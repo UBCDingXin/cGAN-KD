@@ -4,7 +4,7 @@ SEED=2020
 NUM_CLASSES=10
 NTRAIN=10000
 
-FAKE_DATASET_NAME="BigGAN_vanilla_epochs_2000_transform_True_subsampling_True_FilterCEPct_0.7_nfake_349999"
+FAKE_DATASET_NAME="BigGAN_vanilla_epochs_2000_transform_True_subsampling_True_FilterCEPct_0.7_AdjustLabel_True_nfake_349999"
 NFAKE=100000
 EPOCHS=350
 LR_DECAY_EPOCHS="150_250"
