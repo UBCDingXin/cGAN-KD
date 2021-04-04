@@ -1,4 +1,4 @@
-# Distill and Transfer Knowledge via cGAN-generated Samples: A Unified Knowledge Distillation Framework
+# Distilling and Transferring Knowledge via cGAN-generated Samples for Image Classification and Regression
 
 This repository provides the source codes for the experiments in our paper. <br />
 If you use this code, please cite
