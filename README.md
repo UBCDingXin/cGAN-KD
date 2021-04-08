@@ -4,7 +4,14 @@ This repository provides the source codes for the experiments in our paper. <br 
 If you use this code, please cite
 ```text
 
-TO BE DONE...
+@misc{ding2021distilling,
+      title={Distilling and Transferring Knowledge via cGAN-generated Samples for Image Classification and Regression}, 
+      author={Xin Ding and Z. Jane Wang and Zuheng Xu and Yongwei Wang and William J. Welch},
+      year={2021},
+      eprint={2104.03164},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
 
 ```
 
