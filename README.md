@@ -80,4 +80,4 @@ tqdm>=4.46.1
 [1] X. Ding, Y. Wang, Z. Xu, W. J. Welch, and Z. J. Wang, “CcGAN: Continuous conditional generative adversarial networks for image generation,” in International Conference on Learning Representations, 2021.  <br />
 [2] X. Ding, Y. Wang, Z. Xu, W. J. Welch, and Z. J. Wang, “Continuous conditional generative adversarial networks for image generation: Novel losses and label input mechanisms,” arXiv preprint arXiv:2011.07466, 2020. https://github.com/UBCDingXin/improved_CcGAN  <br />
 [3] https://github.com/ajbrock/BigGAN-PyTorch <br />
-[4] Ding, Xin, et al. "Efficient Subsampling for Generating High-Quality Images from Conditional Generative Adversarial Networks." arXiv preprint arXiv:2103.11166 (2021). https://github.com/UBCDingXin/cDRE-based_Subsampling_cGANS
+[4] Ding, Xin, et al. "Efficient Subsampling of Realistic Images From GANs Conditional on a Class or a Continuous Variable." arXiv preprint arXiv:2103.11166v5 (2022). https://github.com/UBCDingXin/cDR-RS
