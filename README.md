@@ -37,20 +37,26 @@ tqdm>=4.46.1
 
 -------------------------------
 
+## Datasets (h5 files) and necessary checkpoints
+
+
+
+
+
+-------------------------------
+
 
 
 -------------------------------
 ## Some Results
-* **CIFAR-100**
+* **ImageNet-100**
 <p align="center">
-  <img src="images/cifar10_main_results.png">
-  <img src="images/cifar10_main_SSKD.png">
-  <img src="images/cifar10_main_UDA.png">
+  <img src="images/ImageNet100_main_results.png">
 </p>
 
-* **Steering Angle**
+* **Steering Angle and UTKFace**
 <p align="center">
-  <img src="images/rc49_main_results.png">
+  <img src="images/steeringangle_and_utkface_main_results.png">
 </p>
 
 
