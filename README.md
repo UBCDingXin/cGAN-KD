@@ -5,10 +5,10 @@ If you use this code, please cite
 ```text
 
 @misc{ding2021distilling,
-      title={Distilling and Transferring Knowledge via cGAN-generated Samples for Image Classification and Regression}, 
+      title={Distilling and Transferring Knowledge via cGAN-generated Samples for Image Classification and Regression},
       author={Xin Ding and Z. Jane Wang and Zuheng Xu and Yongwei Wang and William J. Welch},
-      year={2021},
-      eprint={2104.03164},
+      year={2022},
+      eprint={2104.03164v3},
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
