@@ -65,11 +65,7 @@ Run `./CIFAR-100/BigGAN/scripts/launch_cifar100_ema.sh`.  <br />
 Checkpoints of BigGAN used in our experiments are in `cGAN-KD_data_and_ckpts.7z`.  <br />
 
 #### Fake data generation
-Run `./CIFAR/CIFAR_50K/cGAN-based_KD/scripts/run_gen_synt_data.sh` for C-50K (50,000 samples).  <br />
-`filtering_threshold` in `run_gen_synt_data.sh` controls the filtering threshold.  <br />
-`NFAKE_PER_CLASS` in `run_gen_synt_data.sh` controls the number of fake images generated for each class. <br />
-Generated fake data are stored in `./CIFAR/CIFAR_50K/cGAN-based_KD/data` in the h5 format. <br />
-Note that before the fake data generation, make sure you train the teacher model first via running  `./CIFAR/CIFAR_50K/cGAN-based_KD/scripts/run_nokd.sh`.
+
 
 ### ImageNet-100
 
