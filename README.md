@@ -55,13 +55,19 @@ tqdm>=4.46.1
 
 
 
-* **Ablation Study**
+* **Ablation Study: CIFAR-100**
 <p align="center">
   <img src="images/cifar100_ablation_effect_of_components_grouped_error.png">
-  <img src="images/steeringangle_ablation_effect_of_components_grouped.png">
   <img src="images/cifar100_ablation_error_vs_nfake.png">
+</p>
+
+
+* **Ablation Study: Steering Angle**
+<p align="center">
+  <img src="images/steeringangle_ablation_effect_of_components_grouped.png">
   <img src="images/steeringangle_ablation_error_vs_nfake.png">
 </p>
+
 
 -------------------------------
 ## References
