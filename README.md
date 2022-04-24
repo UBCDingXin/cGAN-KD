@@ -30,27 +30,27 @@ If you use this code, please cite
 
 -------------------------------
 
-## Requirements
+## 1. Requirements
 argparse>=1.1, h5py>=2.10.0, matplotlib>=3.2.1, numpy>=1.18.5, Pillow>=7.0.0, python=3.8.5, torch>=1.5.0, torchvision>=0.6.0,
 tqdm>=4.46.1
 
 
 -------------------------------
 
-## Datasets (h5 files) and necessary checkpoints
+## 2. Datasets (h5 files) and necessary checkpoints
 
-### CIFAR-100
+### 2.1 CIFAR-100
 Download `eval_and_gan_ckpts.7z`:  <br />
 https://1drv.ms/u/s!Arj2pETbYnWQuqt036MJ2KdVMKRXAw?e=4mo5SI <br />
 Unzip `eval_and_gan_ckpts.7z` you will get `eval_and_gan_ckpts`. Then, put `eval_and_gan_ckpts` under `./CIFAR-100` <br />
 
-### ImageNet-100
+### 2.2 ImageNet-100
 
 
-### Steering Angle
+### 2.3 Steering Angle
 
 
-### UTKFace
+### 2.4 UTKFace
 
 
 
@@ -58,11 +58,11 @@ Unzip `eval_and_gan_ckpts.7z` you will get `eval_and_gan_ckpts`. Then, put `eval
 
 
 -------------------------------
-## Sample Usage
+## 3. Sample Usage
 
 **Remember to correctly set all paths in .sh files correctly!**  <br />
 
-### CIFAR-100
+### 3.1 CIFAR-100
 #### BigGAN training
 The implementation of BigGAN is mainly based on [3].  <br />
 Run `./CIFAR-100/BigGAN/scripts/launch_cifar100_ema.sh`.  <br />
@@ -99,19 +99,19 @@ Run `./CIFAR-100/RepDistiller/scripts/vanilla/run_vanilla.sh`
 
 
 
-### ImageNet-100
+### 3.2 ImageNet-100
 
 
-### Steering Angle
+### 3.3 Steering Angle
 
 
-### UTKFace
+### 3.4 UTKFace
 
 
 
 
 -------------------------------
-## Some Results
+## 4. Some Results
 * **ImageNet-100**
 <p align="center">
   <img src="images/ImageNet100_main_results.png">
@@ -139,7 +139,7 @@ Run `./CIFAR-100/RepDistiller/scripts/vanilla/run_vanilla.sh`
 
 
 -------------------------------
-## References
+## 5. References
 [1] X. Ding, Y. Wang, Z. Xu, W. J. Welch, and Z. J. Wang, “CcGAN: Continuous conditional generative adversarial networks for image generation,” in International Conference on Learning Representations, 2021.  <br />
 [2] X. Ding, Y. Wang, Z. Xu, W. J. Welch, and Z. J. Wang, “Continuous conditional generative adversarial networks for image generation: Novel losses and label input mechanisms,” arXiv preprint arXiv:2011.07466, 2020. https://github.com/UBCDingXin/improved_CcGAN  <br />
 [3] https://github.com/ajbrock/BigGAN-PyTorch <br />
