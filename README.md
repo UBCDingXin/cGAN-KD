@@ -42,7 +42,7 @@ tqdm>=4.46.1
 ### CIFAR-100
 Download `eval_and_gan_ckpts.7z`:  <br />
 https://1drv.ms/u/s!Arj2pETbYnWQuqtxWEYf7ZjIO3dxLw?e=jIPRGF <br />
-Unzip `eval_and_gan_ckpts.7z` you will get `eval_and_gan_ckpts`. Then, put all contents in `eval_and_gan_ckpts` to `./CIFAR-100/eval_and_gan_ckpts` <br />
+Unzip `eval_and_gan_ckpts.7z` you will get `eval_and_gan_ckpts`. Then, put `eval_and_gan_ckpts` under `./CIFAR-100` <br />
 
 ### ImageNet-100
 
@@ -60,16 +60,17 @@ Unzip `eval_and_gan_ckpts.7z` you will get `eval_and_gan_ckpts`. Then, put all c
 -------------------------------
 ## Sample Usage
 
+Remember to correctly set all paths in .sh files correctly!  <br />
+
 ### CIFAR-100
 #### BigGAN training
 The implementation of BigGAN is mainly based on [3].  <br />
 Run `./CIFAR-100/BigGAN/scripts/launch_cifar100_ema.sh`.  <br />
-Checkpoints of BigGAN used in our experiments are in `cGAN-KD_data_and_ckpts.7z`.  <br />
-
-
-
+Checkpoints of BigGAN used in our experiments are already in `cGAN-KD_data_and_ckpts.7z`.  <br />
 
 #### Fake data generation
+
+
 
 
 ### ImageNet-100
