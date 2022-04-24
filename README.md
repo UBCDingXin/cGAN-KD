@@ -40,9 +40,9 @@ tqdm>=4.46.1
 ## Datasets (h5 files) and necessary checkpoints
 
 ### CIFAR-100
-Download and unzip `eval_and_gan_ckpts.7z`:  <br />
+Download `eval_and_gan_ckpts.7z`:  <br />
 https://1drv.ms/u/s!Arj2pETbYnWQuqtxWEYf7ZjIO3dxLw?e=jIPRGF <br />
-Put all contents in `eval_and_gan_ckpts` to `./CIFAR-100/eval_and_gan_ckpts` <br />
+Unzip `eval_and_gan_ckpts.7z` you will get `eval_and_gan_ckpts`. Then, put all contents in `eval_and_gan_ckpts` to `./CIFAR-100/eval_and_gan_ckpts` <br />
 
 ### ImageNet-100
 
