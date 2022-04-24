@@ -60,7 +60,7 @@ Unzip `eval_and_gan_ckpts.7z` you will get `eval_and_gan_ckpts`. Then, put `eval
 -------------------------------
 ## Sample Usage
 
-Remember to correctly set all paths in .sh files correctly!  <br />
+**Remember to correctly set all paths in .sh files correctly!**  <br />
 
 ### CIFAR-100
 #### BigGAN training
