@@ -39,18 +39,18 @@ tqdm>=4.46.1
 
 ## 2. Datasets (h5 files) and necessary checkpoints
 
-### 2.1. **CIFAR-100**
+### 2.1. CIFAR-100
 Download `eval_and_gan_ckpts.7z`:  <br />
 https://1drv.ms/u/s!Arj2pETbYnWQuqt036MJ2KdVMKRXAw?e=4mo5SI <br />
 Unzip `eval_and_gan_ckpts.7z` you will get `eval_and_gan_ckpts`. Then, put `eval_and_gan_ckpts` under `./CIFAR-100` <br />
 
-### 2.2. **ImageNet-100**
+### 2.2. ImageNet-100
 
 
-### 2.3. **Steering Angle**
+### 2.3. Steering Angle
 
 
-### 2.4. **UTKFace**
+### 2.4. UTKFace
 
 
 
@@ -62,7 +62,7 @@ Unzip `eval_and_gan_ckpts.7z` you will get `eval_and_gan_ckpts`. Then, put `eval
 
 **Remember to correctly set all paths in .sh files correctly!**  <br />
 
-### 3.1. **CIFAR-100**
+### 3.1. CIFAR-100
 #### BigGAN training
 The implementation of BigGAN is mainly based on [3].  <br />
 Run `./CIFAR-100/BigGAN/scripts/launch_cifar100_ema.sh`.  <br />
@@ -99,39 +99,39 @@ Run `./CIFAR-100/RepDistiller/scripts/vanilla/run_vanilla.sh`
 
 
 
-### 3.2. **ImageNet-100**
+### 3.2. ImageNet-100
 
 
-### 3.3. **Steering Angle**
+### 3.3. Steering Angle
 
 
-### 3.4. **UTKFace**
+### 3.4. UTKFace
 
 
 
 
 -------------------------------
 ## 4. Some Results
-* **ImageNet-100**
+### 4.1. ImageNet-100
 <p align="center">
   <img src="images/ImageNet100_main_results.png">
 </p>
 
-* **Steering Angle and UTKFace**
+### 4.2. Steering Angle and UTKFace
 <p align="center">
   <img src="images/steeringangle_and_utkface_main_results.png">
 </p>
 
 
 
-* **Ablation Study: CIFAR-100**
+### 4.3. Ablation Study: CIFAR-100
 <p align="center">
   <img src="images/cifar100_ablation_effect_of_components_grouped_error.png">
   <img src="images/cifar100_ablation_error_vs_nfake.png">
 </p>
 
 
-* **Ablation Study: Steering Angle**
+### 4.4. Ablation Study: Steering Angle
 <p align="center">
   <img src="images/steeringangle_ablation_effect_of_components_grouped.png">
   <img src="images/steeringangle_ablation_error_vs_nfake.png">
