@@ -31,9 +31,9 @@ If you use this code, please cite
 ## To Do List
 
 - [x] CIFAR-100
-- [] ImageNet-100
-- [] Steering Angle
-- [] UTKFace
+- [ ] ImageNet-100
+- [ ] Steering Angle
+- [ ] UTKFace
 
 
 -------------------------------
