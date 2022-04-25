@@ -27,6 +27,14 @@ If you use this code, please cite
   Evolution of fake samples' distributions and datasets.
 </p>
 
+-------------------------------
+## To Do List
+
+- [x] CIFAR-100
+- [] ImageNet-100
+- [] Steering Angle
+- [] UTKFace
+
 
 -------------------------------
 
