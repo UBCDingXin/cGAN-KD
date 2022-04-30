@@ -68,37 +68,37 @@ Unzip `eval_and_gan_ckpts.7z` you will get `eval_and_gan_ckpts`. Then, put `eval
 -------------------------------
 ## 3. Sample Usage
 
-**Remember to correctly set all paths in .sh files correctly!**  <br />
+**Remember to correctly set all paths and other settings in .sh files correctly!**  <br />
 
 ### 3.1. CIFAR-100
-#### BigGAN training
+#### 3.1.1. BigGAN training
 The implementation of BigGAN is mainly based on [3].  <br />
 Run `./CIFAR-100/BigGAN/scripts/launch_cifar100_ema.sh`.  <br />
 Checkpoints of BigGAN used in our experiments are already in `cGAN-KD_data_and_ckpts.7z`.  <br />
 
-#### Fake data generation
+#### 3.1.2. Fake data generation in `./CIFAR-100/make_fake_datasets`
 Run `./CIFAR-100/make_fake_datasets/scripts/run.sh`.  <br />
 
-#### Train cnns without KD
+#### 3.1.3. Train cnns without KD in `./CIFAR-100/RepDistiller`
 Run `./CIFAR-100/RepDistiller/scripts/vanilla/run_vanilla.sh`
 
-#### Implement existing KD except SSKD, ReviewKD and TAKD
+#### 3.1.4. Implement existing KD except SSKD, ReviewKD and TAKD in `./CIFAR-100/RepDistiller`
+Run `./CIFAR-100/RepDistiller/`
+
+
+#### 3.1.5. Implement TAKD in `./CIFAR-100/TAKD`
 
 
 
-#### Implement TAKD
+#### 3.1.6. Implement SSKD in `./CIFAR-100/SSKD`
 
 
 
-#### Implement SSKD
+#### 3.1.7. Implement ReviewKD in `./CIFAR-100/ReviewKD`
 
 
 
-#### Implement ReviewKD
-
-
-
-#### Implement cGAN-KD-based methods
+#### 3.1.8. Implement cGAN-KD-based methods
 
 
 
