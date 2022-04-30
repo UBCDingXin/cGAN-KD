@@ -68,7 +68,7 @@ Unzip `eval_and_gan_ckpts.7z` you will get `eval_and_gan_ckpts`. Then, put `eval
 -------------------------------
 ## 3. Sample Usage
 
-**Remember to correctly set all paths and other settings in .sh files correctly!**  <br />
+**Remember to correctly set all paths and other settings (e.g., TEACHER, STUDENT, and NFAKE) in .sh files correctly!**  <br />
 
 ### 3.1. CIFAR-100
 #### 3.1.1. BigGAN training
@@ -83,30 +83,28 @@ Run `./CIFAR-100/make_fake_datasets/scripts/run.sh`.  <br />
 Run `./CIFAR-100/RepDistiller/scripts/vanilla/run_vanilla.sh`
 
 #### 3.1.4. Implement existing KD except SSKD, ReviewKD and TAKD in `./CIFAR-100/RepDistiller`
-Run `./CIFAR-100/RepDistiller/`
+Run `./CIFAR-100/RepDistiller/scripts/distill/run_distill.sh`
 
 
 #### 3.1.5. Implement TAKD in `./CIFAR-100/TAKD`
-
+Run `./CIFAR-100/TAKD/scripts/distill/run_distill.sh`
 
 
 #### 3.1.6. Implement SSKD in `./CIFAR-100/SSKD`
-
+First, run `./CIFAR-100/SSKD/scripts/vanilla/run_vanilla.sh`.  <br />
+Then, run `./CIFAR-100/SSKD/scripts/distill/run_distill.sh`
 
 
 #### 3.1.7. Implement ReviewKD in `./CIFAR-100/ReviewKD`
-
+Run `./CIFAR-100/ReviewKD/scripts/run_distill.sh`
 
 #### 3.1.8. Implement cGAN-KD-based methods
-
-
 ##### 3.1.8.1 cGAN-KD only
-
+Run `./CIFAR-100/RepDistiller/scripts/vanilla/run_vanilla_fake.sh`
 
 ##### 3.1.8.2 cGAN-KD + XXX
 For cGAN-KD + BLKD/FitNet/VID/RKD/CRD, run `./CIFAR-100/RepDistiller/scripts/distill/run_distill_fake.sh` <br />
 For cGAN-KD + SSKD, run `./CIFAR-100/SSKD/scripts/distill/run_distill_fake.sh` <br />
-Please set TEACHER and STUDENT correctly.
 
 
 ### 3.2. ImageNet-100
