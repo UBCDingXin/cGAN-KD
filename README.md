@@ -54,6 +54,7 @@ Unzip `eval_and_gan_ckpts.7z` you will get `eval_and_gan_ckpts`. Then, put `eval
 
 ### 2.2. ImageNet-100
 Download `eval_and_gan_ckpts.7z`:  <br />
+https://1drv.ms/u/s!Arj2pETbYnWQuqwFLFR8_cf7tWKqtQ?e=o1sPe9 <br />
 Unzip `eval_and_gan_ckpts.7z` you will get `eval_and_gan_ckpts`. Then, put `eval_and_gan_ckpts` under `./ImageNet-100` <br />
 
 ### 2.3. Steering Angle
@@ -108,12 +109,42 @@ For cGAN-KD + BLKD/FitNet/VID/RKD/CRD, run `./CIFAR-100/RepDistiller/scripts/dis
 For cGAN-KD + SSKD, run `./CIFAR-100/SSKD/scripts/distill/run_distill_fake.sh` <br />
 
 
+
+
+
 ### 3.2. ImageNet-100
 The implementation of BigGAN is mainly based on [3,4].  <br />
 Checkpoints of BigGAN used in our experiments are already in `cGAN-KD_data_and_ckpts.7z` (see 2.2. ImageNet-100).  <br />
 
+#### 3.2.1. Fake data generation in `./ImageNet-100/make_fake_datasets`
+Run `./ImageNet-100/make_fake_datasets/scripts/run.sh`.  <br />
+
+#### 3.2.2. Train cnns without KD in `./ImageNet-100/RepDistiller`
+Run `./ImageNet-100/RepDistiller/scripts/vanilla/run_vanilla.sh`
+
+#### 3.2.3. Implement existing KD except SSKD, ReviewKD and TAKD in `./ImageNet-100/RepDistiller`
+Run `./ImageNet-100/RepDistiller/scripts/distill/run_distill.sh`
 
 
+#### 3.2.4. Implement TAKD in `./ImageNet-100/TAKD`
+Run `./ImageNet-100/TAKD/scripts/distill/run_distill.sh`
+
+
+#### 3.2.5. Implement SSKD in `./ImageNet-100/SSKD`
+First, run `./ImageNet-100/SSKD/scripts/vanilla/run_vanilla.sh`.  <br />
+Then, run `./ImageNet-100/SSKD/scripts/distill/run_distill.sh`
+
+
+#### 3.2.6. Implement ReviewKD in `./ImageNet-100/ReviewKD`
+Run `./ImageNet-100/ReviewKD/scripts/run_distill.sh`
+
+#### 3.2.7. Implement cGAN-KD-based methods
+##### 3.2.7.1 cGAN-KD only
+Run `./ImageNet-100/RepDistiller/scripts/vanilla/run_vanilla_fake.sh`
+
+##### 3.2.7.2 cGAN-KD + XXX
+For cGAN-KD + BLKD/FitNet/VID/RKD/CRD, run `./ImageNet-100/RepDistiller/scripts/distill/run_distill_fake.sh` <br />
+For cGAN-KD + SSKD, run `./ImageNet-100/SSKD/scripts/distill/run_distill_fake.sh` <br />
 
 
 
