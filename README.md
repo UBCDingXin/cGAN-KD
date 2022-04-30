@@ -31,7 +31,7 @@ If you use this code, please cite
 ## To Do List
 
 - [x] CIFAR-100
-- [ ] ImageNet-100
+- [x] ImageNet-100
 - [ ] Steering Angle
 - [ ] UTKFace
 
@@ -53,7 +53,8 @@ https://1drv.ms/u/s!Arj2pETbYnWQuqt036MJ2KdVMKRXAw?e=4mo5SI <br />
 Unzip `eval_and_gan_ckpts.7z` you will get `eval_and_gan_ckpts`. Then, put `eval_and_gan_ckpts` under `./CIFAR-100` <br />
 
 ### 2.2. ImageNet-100
-
+Download `eval_and_gan_ckpts.7z`:  <br />
+Unzip `eval_and_gan_ckpts.7z` you will get `eval_and_gan_ckpts`. Then, put `eval_and_gan_ckpts` under `./ImageNet-100` <br />
 
 ### 2.3. Steering Angle
 
@@ -72,9 +73,9 @@ Unzip `eval_and_gan_ckpts.7z` you will get `eval_and_gan_ckpts`. Then, put `eval
 
 ### 3.1. CIFAR-100
 #### 3.1.1. BigGAN training
-The implementation of BigGAN is mainly based on [3].  <br />
+The implementation of BigGAN is mainly based on [3,4].  <br />
 Run `./CIFAR-100/BigGAN/scripts/launch_cifar100_ema.sh`.  <br />
-Checkpoints of BigGAN used in our experiments are already in `cGAN-KD_data_and_ckpts.7z`.  <br />
+Checkpoints of BigGAN used in our experiments are already in `cGAN-KD_data_and_ckpts.7z` (see 2.1. CIFAR-100).  <br />
 
 #### 3.1.2. Fake data generation in `./CIFAR-100/make_fake_datasets`
 Run `./CIFAR-100/make_fake_datasets/scripts/run.sh`.  <br />
@@ -108,6 +109,25 @@ For cGAN-KD + SSKD, run `./CIFAR-100/SSKD/scripts/distill/run_distill_fake.sh` <
 
 
 ### 3.2. ImageNet-100
+The implementation of BigGAN is mainly based on [3,4].  <br />
+Checkpoints of BigGAN used in our experiments are already in `cGAN-KD_data_and_ckpts.7z` (see 2.2. ImageNet-100).  <br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ### 3.3. Steering Angle
