@@ -101,7 +101,10 @@ Run `./CIFAR-100/RepDistiller/`
 #### 3.1.8. Implement cGAN-KD-based methods
 
 
+##### 3.1.8.1 cGAN-KD only
 
+
+##### 3.1.8.2 cGAN-KD + XXX
 
 
 
