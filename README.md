@@ -48,20 +48,36 @@ tqdm>=4.46.1
 ## 2. Datasets (h5 files) and necessary checkpoints
 
 ### 2.1. CIFAR-100
+#### 2.1.1 Dataset
+
+#### 2.1.2 Checkpoints
 Download `eval_and_gan_ckpts.7z`:  <br />
 https://1drv.ms/u/s!Arj2pETbYnWQuqt036MJ2KdVMKRXAw?e=4mo5SI <br />
 Unzip `eval_and_gan_ckpts.7z` you will get `eval_and_gan_ckpts`. Then, put `eval_and_gan_ckpts` under `./CIFAR-100` <br />
 
 ### 2.2. ImageNet-100
+#### 2.2.1 Dataset
+
+
+#### 2.1.2 Checkpoints
 Download `eval_and_gan_ckpts.7z`:  <br />
 https://1drv.ms/u/s!Arj2pETbYnWQuqwFLFR8_cf7tWKqtQ?e=o1sPe9 <br />
 Unzip `eval_and_gan_ckpts.7z` you will get `eval_and_gan_ckpts`. Then, put `eval_and_gan_ckpts` under `./ImageNet-100` <br />
 
 ### 2.3. Steering Angle
+#### 2.3.1 Dataset
+
+
+#### 2.3.2 Checkpoints
+
+
 
 
 ### 2.4. UTKFace
+#### 2.4.1 Dataset
 
+
+#### 2.4.2 Checkpoints
 
 
 
@@ -149,22 +165,16 @@ For cGAN-KD + SSKD, run `./ImageNet-100/SSKD/scripts/distill/run_distill_fake.sh
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 ### 3.3. Steering Angle
 
 
+
+
+
 ### 3.4. UTKFace
+
+
+
 
 
 
