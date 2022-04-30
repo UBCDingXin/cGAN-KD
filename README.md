@@ -1,6 +1,6 @@
 # Distilling and Transferring Knowledge via cGAN-generated Samples for Image Classification and Regression
 
-This repository provides the source codes for the experiments in our paper. <br />
+This repository provides the source codes for the experiments in our paper at https://arxiv.org/abs/2104.03164. <br />
 If you use this code, please cite
 ```text
 
@@ -104,9 +104,9 @@ Run `./CIFAR-100/RepDistiller/`
 
 
 ##### 3.1.8.2 cGAN-KD + XXX
-
-
-
+For cGAN-KD + BLKD/FitNet/VID/RKD/CRD, run `./CIFAR-100/RepDistiller/scripts/distill/run_distill_fake.sh` <br />
+For cGAN-KD + SSKD, run `./CIFAR-100/SSKD/scripts/distill/run_distill_fake.sh` <br />
+Please set TEACHER and STUDENT correctly.
 
 
 ### 3.2. ImageNet-100

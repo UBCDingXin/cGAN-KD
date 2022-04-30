@@ -18,6 +18,22 @@ python train_student.py \
     --finetune --init_student_path $INIT_STUDENT_PATH \
     2>&1 | tee output_S_${STUDENT}_T_${TEACHER}_kd_fake.txt
 
+# FitNet
+python train_student.py \
+    --root_path $ROOT_PATH --data_path $DATA_PATH \
+    --path_t $TEACHER_PATH --distill hint --model_s $STUDENT -a 1 -b 100 --resume_epoch 0 \
+    --batch_size 128 --learning_rate 0.01 --use_fake_data --fake_data_path $FAKE_DATA_PATH --nfake $NFAKE \
+    --finetune --init_student_path $INIT_STUDENT_PATH \
+    2>&1 | tee output_S_${STUDENT}_T_${TEACHER}_fitnet_fake.txt
+
+# VID
+python train_student.py \
+    --root_path $ROOT_PATH --data_path $DATA_PATH \
+    --path_t $TEACHER_PATH --distill vid --model_s $STUDENT -a 1 -b 1 --resume_epoch 0 \
+    --batch_size 128 --learning_rate 0.01 --use_fake_data --fake_data_path $FAKE_DATA_PATH --nfake $NFAKE \
+    --finetune --init_student_path $INIT_STUDENT_PATH \
+    2>&1 | tee output_S_${STUDENT}_T_${TEACHER}_VID_fake.txt
+
 # RKD
 python train_student.py \
     --root_path $ROOT_PATH --data_path $DATA_PATH \
