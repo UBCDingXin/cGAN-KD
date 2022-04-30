@@ -32,8 +32,8 @@ If you use this code, please cite
 
 - [x] CIFAR-100
 - [x] ImageNet-100
-- [ ] Steering Angle
-- [ ] UTKFace
+- [x] Steering Angle
+- [x] UTKFace
 
 
 -------------------------------
@@ -48,16 +48,14 @@ tqdm>=4.46.1
 ## 2. Datasets (h5 files) and necessary checkpoints
 
 ### 2.1. CIFAR-100
-#### 2.1.1 Dataset
-
-#### 2.1.2 Checkpoints
 Download `eval_and_gan_ckpts.7z`:  <br />
 https://1drv.ms/u/s!Arj2pETbYnWQuqt036MJ2KdVMKRXAw?e=4mo5SI <br />
 Unzip `eval_and_gan_ckpts.7z` you will get `eval_and_gan_ckpts`. Then, put `eval_and_gan_ckpts` under `./CIFAR-100` <br />
 
 ### 2.2. ImageNet-100
 #### 2.2.1 Dataset
-
+Download `ImageNet_128x128_100Class.h5` from https://1drv.ms/u/s!Arj2pETbYnWQtoVvUvsC2xoh3swt4A?e=0PDCJo  <br />
+Put this .h5 file at `./datasets/ImageNet-100`.
 
 #### 2.1.2 Checkpoints
 Download `eval_and_gan_ckpts.7z`:  <br />
@@ -65,19 +63,12 @@ https://1drv.ms/u/s!Arj2pETbYnWQuqwFLFR8_cf7tWKqtQ?e=o1sPe9 <br />
 Unzip `eval_and_gan_ckpts.7z` you will get `eval_and_gan_ckpts`. Then, put `eval_and_gan_ckpts` under `./ImageNet-100` <br />
 
 ### 2.3. Steering Angle
-#### 2.3.1 Dataset
-
-
-#### 2.3.2 Checkpoints
-
-
-
+Download `SteeringAngle_64x64_prop_0.8.h5` from https://1drv.ms/u/s!Arj2pETbYnWQudF7rY9aeP-Eis4_5Q?e=kBkS2P  <br />
+Put this .h5 file at `./datasets/SteeringAngle`.
 
 ### 2.4. UTKFace
-#### 2.4.1 Dataset
-
-
-#### 2.4.2 Checkpoints
+Download `UTKFace_64x64_prop_0.8.h5` from https://1drv.ms/u/s!Arj2pETbYnWQucRHFHhZtG9P1iXxpw?e=B6tQsS  <br />
+Put this .h5 file at `./datasets/UTKFace`.
 
 
 
@@ -166,13 +157,27 @@ For cGAN-KD + SSKD, run `./ImageNet-100/SSKD/scripts/distill/run_distill_fake.sh
 
 
 ### 3.3. Steering Angle
+#### 3.3.1. CcGAN training and fake data generation
+The implementation of CcGAN is mainly based on [1,2].  <br />
+Run `./SteeringAngle/scripts/run_gene_data.sh`.  <br />
 
+#### 3.3.2. Train cnns without KD
+Run `./SteeringAngle/scripts/run_cnn.sh`
 
+#### 3.3.3. Implement cGAN-KD-based methods
+Run `./SteeringAngle/scripts/run_cnn_fake.sh`
 
 
 
 ### 3.4. UTKFace
+The implementation of CcGAN is mainly based on [1,2].  <br />
+Run `./SteeringAngle/scripts/run_gene_data.sh`.  <br />
 
+#### 3.3.2. Train cnns without KD
+Run `./SteeringAngle/scripts/run_cnn.sh`
+
+#### 3.3.3. Implement cGAN-KD-based methods
+Run `./SteeringAngle/scripts/run_cnn_fake.sh`
 
 
 
