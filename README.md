@@ -187,30 +187,27 @@ Run `./SteeringAngle/scripts/run_cnn_fake.sh`
 -------------------------------
 ## 4. Some Results
 
-### 4.1. CIFAR-100
+### 4.1. CIFAR-100 and ImageNet-100
 <p align="center">
+  <img src="images/cifar100_and_imagenet100_main_results.png">
   <img src="images/CIFAR100_main_results_similar.png">
   <img src="images/CIFAR100_main_results_cross.png">
-</p>
-
-
-### 4.2. ImageNet-100
-<p align="center">
   <img src="images/ImageNet100_main_results.png">
 </p>
 
-### 4.3. Steering Angle and UTKFace
+
+### 4.2. Steering Angle and UTKFace
 <p align="center">
   <img src="images/steeringangle_and_utkface_main_results.png">
 </p>
 
-### 4.4. Ablation Study: CIFAR-100
+### 4.3. Ablation Study: CIFAR-100
 <p align="center">
   <img src="images/cifar100_ablation_effect_of_components_grouped_error.png">
   <img src="images/cifar100_ablation_error_vs_nfake.png">
 </p>
 
-### 4.5. Ablation Study: Steering Angle
+### 4.4. Ablation Study: Steering Angle
 <p align="center">
   <img src="images/steeringangle_ablation_effect_of_components_grouped.png">
   <img src="images/steeringangle_ablation_error_vs_nfake.png">
