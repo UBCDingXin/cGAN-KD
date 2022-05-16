@@ -77,7 +77,7 @@ Put this .h5 file at `./datasets/UTKFace`.
 -------------------------------
 ## 3. Sample Usage
 
-**Remember to correctly set all paths and other settings (e.g., TEACHER, STUDENT, and NFAKE) in .sh files correctly!**  <br />
+**Remember to correctly set all paths and other settings (e.g., TEACHER, STUDENT, and NFAKE) in .sh files!**  <br />
 
 ### 3.1. CIFAR-100
 #### 3.1.1. BigGAN training
