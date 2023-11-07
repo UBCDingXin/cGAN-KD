@@ -1,16 +1,17 @@
 # Distilling and Transferring Knowledge via cGAN-generated Samples for Image Classification and Regression
 
-This repository provides the source codes for the experiments in our paper at https://arxiv.org/abs/2104.03164. <br />
+This repository provides the source codes for the experiments in our paper at [here](https://www.sciencedirect.com/science/article/abs/pii/S0957417422020784). <br />
 If you use this code, please cite
 ```text
 
-@misc{ding2021distilling,
-      title={Distilling and Transferring Knowledge via cGAN-generated Samples for Image Classification and Regression},
-      author={Xin Ding and Z. Jane Wang and Zuheng Xu and Yongwei Wang and William J. Welch},
-      year={2022},
-      eprint={2104.03164v3},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@article{ding2023distilling,
+    title={Distilling and transferring knowledge via cGAN-generated samples for image classification and regression},
+    author={Ding, Xin and Wang, Yongwei and Xu, Zuheng and Wang, Z Jane and Welch, William J},
+    journal={Expert Systems with Applications},
+    volume={213},
+    pages={119060},
+    year={2023},
+    publisher={Elsevier}
 }
 
 ```
